@@ -100,6 +100,8 @@ app.post('/', (req,res)=>{
         .then(canonical=>res.json(canonical));*/
 });
 
+//Static route
+
 if (process.env.NODE_ENV==='production'){
     app.use(express.static('client/build'));
 
