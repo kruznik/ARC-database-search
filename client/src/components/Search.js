@@ -41,7 +41,7 @@ class SearchForm extends Component{
         let fieldValidationErrors = this.state.formErrors;
         let chemsValid=this.state.chemsValid;
 
-        let invalidChems=value.trim().split(',').filter((chem)=>!chem.match(/^([^J][a-z0-9@+\-\[\]\(\)\\\/%=#$]{6,})$/ig));
+        let invalidChems=value.trim().split(',').filter((chem)=>!chem.match(/^([^J][A-Za-z0-9@+\-\[\]\(\)\\=#$]+)$/));
 
         chemsValid=invalidChems.length===0;
         fieldValidationErrors.chems=chemsValid?'': invalidChems.join(',');

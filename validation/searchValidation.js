@@ -6,7 +6,7 @@ module.exports = function validateSearchSmiles(data){
     let errors = {};
 
     let notSmile = data.chems.filter((smile)=>{
-        if(!Validator.matches(smile,/^([^J][a-z0-9@+\-\[\]\(\)\\\/%=#$]{6,})$/ig)){
+        if(!Validator.matches(smile,/^([^J][A-Za-z0-9@+\-\[\]\(\)\\=#$]+)$/)){
             return(smile);
         }
     });
